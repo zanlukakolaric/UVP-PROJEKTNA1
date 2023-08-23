@@ -79,7 +79,7 @@ def shrani(podatki_o_kriptovalutah):
     
     
 def graf_povprecnih_cen(podatki_o_kriptovalutah):
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Povprečje"].plot(label=f"{kriptovaluta}")
     
@@ -91,7 +91,7 @@ def graf_povprecnih_cen(podatki_o_kriptovalutah):
     plt.show()
 
 def graf_odpiralnih_cen(podatki_o_kriptovalutah):
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Open"].plot(label=f"{kriptovaluta}")
     
@@ -107,7 +107,7 @@ def graf_odpiralnih_cen(podatki_o_kriptovalutah):
 
 
 def graf_rasti_v_procentih(podatki_o_kriptovalutah):
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Rast v %"].plot(label=f"{kriptovaluta}")
     
@@ -120,7 +120,7 @@ def graf_rasti_v_procentih(podatki_o_kriptovalutah):
     
     
 def graf_volumna(podatki_o_kriptovalutah):
-    plt.figure(figsize=(10, 5))
+    plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Volume"].plot(label=f"{kriptovaluta}")
     

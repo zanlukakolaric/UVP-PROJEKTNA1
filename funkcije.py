@@ -14,7 +14,7 @@ def pridobi_podatke(imena_kriptovalut, z ="2015-09-17", k="2023-08-01"):
     
     return podatki
 
-
+podatki_o_kriptovalutah = pridobi_podatke(["BTC-USD"])
 def dodaj_dnevna_rast(podatki_o_kriptovalutah):
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items():
         podatki["Dnevna rast"] = (podatki["Close"] - podatki["Open"]).round(4)
@@ -47,7 +47,12 @@ def rast_v_procentih(podatki_o_kriptovalutah):
         podatki_o_kriptovalutah[kriptuvaluta] = podatki
     return podatki_o_kriptovalutah
 
-
+def rast_glede_na_x(podatki_o_kriptovalutah, x = None):
+    for kriptuvaluta, podatki in podatki_o_kriptovalutah.items():
+        if x is None:
+            return podatki_o_kriptovalutah
+        else:
+            return podatki_o_kriptovalutah  
     
     
     
@@ -89,6 +94,19 @@ def graf_odpiralnih_cen(podatki_o_kriptovalutah):
     plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Open"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Gibanje odpiralnih cen")
+    plt.xlabel("Datum")
+    plt.ylabel("Cena v USD")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+    
+def graf_odpiralnih_cen_BNB(podatki_o_kriptovalutah):
+    plt.figure(figsize=(12, 6))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        if kriptovaluta == "BNB-USD":
+            podatki["Open"].plot(label=f"{kriptovaluta}")
     
     plt.title("Gibanje odpiralnih cen")
     plt.xlabel("Datum")

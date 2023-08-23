@@ -21,6 +21,8 @@ def dodaj_dnevna_rast(podatki_o_kriptovalutah):
         podatki_o_kriptovalutah[kriptovaluta]  = podatki
     return podatki_o_kriptovalutah
     
+    
+    
 
     
     
@@ -97,15 +99,29 @@ def graf_rasti_v_procentih(podatki_o_kriptovalutah):
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Rast v %"].plot(label=f"{kriptovaluta}")
     
-    plt.title("Rast kriptovalute v %")
+    plt.title("Rast kriptovalut v %")
     plt.xlabel("Datum")
     plt.ylabel("Rast v %")
     plt.grid(True)
     plt.legend()
     plt.show()
+    
+    
+def graf_volumna(podatki_o_kriptovalutah):
+    plt.figure(figsize=(10, 5))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        podatki["Volume"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Volumen")
+    plt.xlabel("Datum")
+    plt.ylabel("Volumen")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+    
 
 
 
-print(graf_rasti_v_procentih((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
+print(graf_volumna((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
 
 

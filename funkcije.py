@@ -79,15 +79,31 @@ def shrani(podatki_o_kriptovalutah):
     
     
 def graf_povprecnih_cen(podatki_o_kriptovalutah):
-    plt.figure(figsize=(12, 6))
+    fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
-        podatki["Povprečje"].plot(label=f"{kriptovaluta}")
-    plt.yscale("log")
-    plt.title("Gibanje povprečnih cen")
-    plt.xlabel("Datum")
-    plt.ylabel("Cena v USD")
-    plt.grid(True)
-    plt.legend()
+        # Plot the exponential function on the first subplot
+        axs[0].plot(podatki.index, podatki["Povprečje"], label=kriptovaluta)
+        axs[0].set_title('Exponential Function')
+        axs[0].set_xlabel('x')
+        axs[0].set_ylabel('y')
+        # Display the plot
+        axs[0].grid(True)
+        axs[0].legend()
+
+
+        # Plot the logarithmically scaled exponential function on the second subplot
+        axs[1].semilogy(podatki.index, podatki["Povprečje"], label=kriptovaluta)
+        axs[1].set_title('Exponential Function (Log Scale)')
+        axs[1].set_xlabel('x')
+        axs[1].set_ylabel('y (Log Scale)')
+        axs[1].grid(True)
+        axs[1].legend()
+
+
+    # Adjust layout to prevent overlap
+    plt.tight_layout()
+
     plt.show()
 
 def graf_odpiralnih_cen(podatki_o_kriptovalutah):

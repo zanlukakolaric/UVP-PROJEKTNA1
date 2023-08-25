@@ -108,7 +108,7 @@ def graf_odpiralnih_cen_BNB(podatki_o_kriptovalutah):
         if kriptovaluta == "BNB-USD":
             podatki["Open"].plot(label=f"{kriptovaluta}")
     
-    plt.title("Gibanje odpiralnih cen")
+    plt.title("Gibanje odpiralnih cen BNB-USD")
     plt.xlabel("Datum")
     plt.ylabel("Cena v USD")
     plt.grid(True)
@@ -116,6 +116,31 @@ def graf_odpiralnih_cen_BNB(podatki_o_kriptovalutah):
     plt.show()
 
 
+def graf_odpiralnih_cen_BTC(podatki_o_kriptovalutah):
+    plt.figure(figsize=(12, 6))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        if kriptovaluta == "BTC-USD":
+            podatki["Open"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Gibanje odpiralnih cen BTC-USD")
+    plt.xlabel("Datum")
+    plt.ylabel("Cena v USD")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+def graf_odpiralnih_cen_ETH(podatki_o_kriptovalutah):
+    plt.figure(figsize=(12, 6))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        if kriptovaluta == "ETH-USD":
+            podatki["Open"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Gibanje odpiralnih cen ETH-USD")
+    plt.xlabel("Datum")
+    plt.ylabel("Cena v USD")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
 
 

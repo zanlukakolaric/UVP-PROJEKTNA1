@@ -82,7 +82,7 @@ def graf_povprecnih_cen(podatki_o_kriptovalutah):
     plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Povprečje"].plot(label=f"{kriptovaluta}")
-    
+    plt.yscale("log")
     plt.title("Gibanje povprečnih cen")
     plt.xlabel("Datum")
     plt.ylabel("Cena v USD")

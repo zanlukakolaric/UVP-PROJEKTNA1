@@ -14,7 +14,7 @@ def pridobi_podatke(imena_kriptovalut, z ="2015-09-17", k="2023-08-01"):
     
     return podatki
 
-podatki_o_kriptovalutah = pridobi_podatke(["BTC-USD"])
+podatki_o_kriptovalutah = pridobi_podatke(["BTC-USD", "ETH-USD","BNB-USD"])
 def dodaj_dnevna_rast(podatki_o_kriptovalutah):
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items():
         podatki["Dnevna rast"] = (podatki["Close"] - podatki["Open"]).round(4)
@@ -194,6 +194,7 @@ def graf_volumna(podatki_o_kriptovalutah):
         axs[1].set_ylabel('y (Log Scale)')
         axs[1].grid(True)
         axs[1].legend()
+    
     plt.tight_layout()
 
     plt.show()

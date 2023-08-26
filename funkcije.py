@@ -174,7 +174,7 @@ def graf_rasti_v_procentih(podatki_o_kriptovalutah):
     
     
 
-def graf_volumna(podatki_o_kriptovalutah):
+def graf_volume(podatki_o_kriptovalutah):
     fig, axs = plt.subplots(1, 2, figsize=(12, 5))
 
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 

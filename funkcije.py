@@ -198,6 +198,8 @@ def graf_volume(podatki_o_kriptovalutah):
 
     plt.show()
 
-print(graf_volumna((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
+
+
+print(graf_volume((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
 
 

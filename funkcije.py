@@ -93,7 +93,7 @@ def graf_povprecnih_cen(podatki_o_kriptovalutah):
 
         # logaritemska skala
         axs[1].semilogy(podatki.index, podatki["Povprečje"], label=kriptovaluta)
-        axs[1].set_title('graf povprečnih cen, logaritemska skala')
+        axs[1].set_title('Graf povprečnih cen, logaritemska skala')
         axs[1].set_xlabel('datum')
         axs[1].set_ylabel('y (Log Scale)')
         axs[1].grid(True)

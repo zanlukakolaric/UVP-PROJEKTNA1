@@ -175,15 +175,30 @@ def graf_rasti_v_procentih(podatki_o_kriptovalutah):
     
 
 def graf_volumna(podatki_o_kriptovalutah):
-    plt.figure(figsize=(12, 6))
+    fig, axs = plt.subplots(1, 2, figsize=(12, 5))
+
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
-        podatki["Volume"].plot(label=f"{kriptovaluta}")
-    
-    plt.title("Volumen")
-    plt.xlabel("Datum")
-    plt.ylabel("Cena v USD")
-    plt.grid(True)
-    plt.legend()
+        # navadna skala
+        axs[0].plot(podatki.index, podatki["Volume"], label=kriptovaluta)
+        axs[0].set_title('Graf volumna')
+        axs[0].set_xlabel('datum')
+        axs[0].set_ylabel('y')
+        axs[0].grid(True)
+        axs[0].legend()
+
+
+        # logaritemska skala
+        axs[1].semilogy(podatki.index, podatki["Volume"], label=kriptovaluta)
+        axs[1].set_title('Graf volumna, logaritemska skala')
+        axs[1].set_xlabel('datum')
+        axs[1].set_ylabel('y (Log Scale)')
+        axs[1].grid(True)
+        axs[1].legend()
+
+
+
+    plt.tight_layout()
+
     plt.show()
     
     

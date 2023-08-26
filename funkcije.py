@@ -163,7 +163,9 @@ def graf_rasti_v_procentih(podatki_o_kriptovalutah):
     plt.figure(figsize=(12, 6))
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
         podatki["Rast v %"].plot(label=f"{kriptovaluta}")
-    
+    povprecna_rast = sum(podatki["Rast v %"] ) / len(podatki["Rast v %"])
+    plt.axhline(povprecna_rast, color='gray', linestyle='dashed', label='Povprečje')
+
     plt.title("Rast kriptovalut v %")
     plt.xlabel("Datum")
     plt.ylabel("Rast v %")
@@ -171,6 +173,7 @@ def graf_rasti_v_procentih(podatki_o_kriptovalutah):
     plt.legend()
     plt.show()
     
+
     
     
 
@@ -247,6 +250,6 @@ def graf_volumna_ETH(podatki_o_kriptovalutah):
 
 
 
-print(graf_volumna_BNB((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
+print(graf_rasti_v_procentih((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
 
 

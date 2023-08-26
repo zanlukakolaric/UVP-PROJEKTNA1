@@ -17,3 +17,4 @@ Za kriptovalute Bitcoin, Ethereum in Binance coin sem sestavil tabele v katerih 
 Za tem, sem podatke predstavil in analiziral s pomočjo grafov.
 
 ## PRIPRAVA PODATKOV
+V datoteki funkcije.py se nahajajo vsi potrebni programi, za pridobivanje in urejanje podatkov. Vse podatke sem nato zbral in predstavil v datoteki glavna_datoteka.ipynb zapisane v Yupiter Notebook.

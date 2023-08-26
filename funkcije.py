@@ -185,9 +185,53 @@ def graf_volumna(podatki_o_kriptovalutah):
     plt.grid(True)
     plt.legend()
     plt.show()
+    
+    
+def graf_volumna_BNB(podatki_o_kriptovalutah):
+    plt.figure(figsize=(12, 6))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        if kriptovaluta == "BNB-USD":
+            podatki["Volume"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Volumen BNB-USD")
+    plt.xlabel("Datum")
+    plt.ylabel("Cena v USD")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+
+def graf_volumna_BTC(podatki_o_kriptovalutah):
+    plt.figure(figsize=(12, 6))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        if kriptovaluta == "BTC-USD":
+            podatki["Volume"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Volumen BTC-USD")
+    plt.xlabel("Datum")
+    plt.ylabel("Cena v USD")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+def graf_volumna_ETH(podatki_o_kriptovalutah):
+    plt.figure(figsize=(12, 6))
+    for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
+        if kriptovaluta == "ETH-USD":
+            podatki["Volume"].plot(label=f"{kriptovaluta}")
+    
+    plt.title("Volumen ETH-USD")
+    plt.xlabel("Datum")
+    plt.ylabel("Cena v USD")
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
 
 
-print(graf_volumna((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
+
+
+
+print(graf_volumna_BNB((uredi_podatke(dodaj_dnevna_rast(povprecje(rast_v_procentih(podatki_o_kriptovalutah)))))))
 
 

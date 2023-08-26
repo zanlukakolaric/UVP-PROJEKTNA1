@@ -82,26 +82,25 @@ def graf_povprecnih_cen(podatki_o_kriptovalutah):
     fig, axs = plt.subplots(1, 2, figsize=(12, 5))
 
     for kriptovaluta, podatki in podatki_o_kriptovalutah.items(): 
-        # Plot the exponential function on the first subplot
+        # navadna skala
         axs[0].plot(podatki.index, podatki["Povprečje"], label=kriptovaluta)
-        axs[0].set_title('Exponential Function')
-        axs[0].set_xlabel('x')
-        axs[0].set_ylabel('y')
-        # Display the plot
+        axs[0].set_title('Graf povprečnih cen')
+        axs[0].set_xlabel('datum')
+        axs[0].set_ylabel('cena v USD')
         axs[0].grid(True)
         axs[0].legend()
 
 
-        # Plot the logarithmically scaled exponential function on the second subplot
+        # logaritemska skala
         axs[1].semilogy(podatki.index, podatki["Povprečje"], label=kriptovaluta)
-        axs[1].set_title('Exponential Function (Log Scale)')
-        axs[1].set_xlabel('x')
+        axs[1].set_title('graf povprečnih cen, logaritemska skala')
+        axs[1].set_xlabel('datum')
         axs[1].set_ylabel('y (Log Scale)')
         axs[1].grid(True)
         axs[1].legend()
 
 
-    # Adjust layout to prevent overlap
+
     plt.tight_layout()
 
     plt.show()

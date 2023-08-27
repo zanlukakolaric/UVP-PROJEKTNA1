@@ -11,7 +11,7 @@ Za kriptovalute Bitcoin, Ethereum in Binance coin sem sestavil tabele v katerih 
 - najnižjo ceno (Low)
 - volumen (Volume)
 - dnevni profit
-- povprečnp ceno
+- povprečno ceno
 - rast (v procentih)
 
 Za tem, sem podatke predstavil in analiziral s pomočjo grafov.
